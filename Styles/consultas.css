@@ -1,0 +1,428 @@
+
+/* =================================
+   CONFIGURACIÓN GENERAL
+================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #061333;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+
+/* =================================
+   NAVBAR PRINCIPAL
+================================= */
+
+.navbar {
+    height: 70px;
+    width: 100%;
+
+    background-color: #061333;
+    border: 3px solid white;
+
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+
+    padding: 0 25px;
+}
+
+
+/* =================================
+   LOGO
+================================= */
+
+.navbar-logo {
+    display: flex;
+    align-items: center;
+
+    width: fit-content;
+    height: 44px;
+}
+
+.logo-due {
+    background: linear-gradient(135deg, #17466e, #07152e);
+    color: white;
+
+    font-size: 23px;
+    font-weight: bold;
+
+    padding: 9px 10px;
+    height: 44px;
+
+    display: flex;
+    align-items: center;
+}
+
+.logo-diligence {
+    background-color: white;
+    color: #315778;
+
+    font-size: 23px;
+    font-weight: bold;
+
+    padding: 9px;
+    height: 44px;
+
+    display: flex;
+    align-items: center;
+}
+
+
+/* =================================
+   MENÚ CENTRAL
+================================= */
+
+.navbar-menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.nav-icon {
+    width: 32px;
+    height: 32px;
+
+    border-radius: 50%;
+    background-color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.nav-icon svg {
+    width: 22px;
+    height: 22px;
+
+    fill: none;
+    stroke: #174b78;
+    stroke-width: 1.8;
+
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.nav-icon:hover {
+    background-color: #2a80bd;
+    transform: scale(1.08);
+}
+
+.nav-icon:hover svg {
+    stroke: white;
+}
+
+.nav-separator {
+    width: 2px;
+    height: 32px;
+    background-color: white;
+}
+
+
+/* =================================
+   MENÚ DESPLEGABLE
+================================= */
+
+.nav-dropdown {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.dropdown-menu {
+    display: none;
+
+    position: absolute;
+    top: 48px;
+    left: 0;
+
+    width: 160px;
+    min-height: 78px;
+
+    background-color: #eeeeee;
+    border: 1px solid #b5b5b5;
+    border-radius: 3px;
+
+    box-shadow: 2px 3px 6px rgba(0, 0, 0, 0.4);
+
+    z-index: 1000;
+    padding: 8px 5px;
+}
+
+.nav-dropdown:hover .dropdown-menu,
+.nav-dropdown:focus-within .dropdown-menu {
+    display: block;
+}
+
+.dropdown-title {
+    color: #111111;
+    font-size: 12px;
+    padding: 3px 0 8px;
+}
+
+.dropdown-divider {
+    width: 100%;
+    height: 1px;
+    background-color: #777777;
+    margin-bottom: 8px;
+}
+
+.dropdown-item {
+    display: block;
+
+    color: #111111;
+    font-size: 10px;
+    font-weight: bold;
+
+    text-decoration: none;
+    padding: 5px 4px;
+
+    white-space: nowrap;
+}
+
+.dropdown-item:hover {
+    background-color: #d5d5d5;
+    color: #174e80;
+}
+
+
+/* =================================
+   INFORMACIÓN DEL USUARIO
+================================= */
+
+.navbar-right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 35px;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    color: white;
+}
+
+.user-time {
+    display: flex;
+    flex-direction: column;
+
+    font-size: 7px;
+    font-style: italic;
+    font-weight: bold;
+
+    text-align: right;
+}
+
+.user-icon {
+    width: 21px;
+    height: 21px;
+
+    fill: none;
+    stroke: #087caa;
+    stroke-width: 1.8;
+}
+
+.user-name {
+    display: flex;
+    flex-direction: column;
+
+    font-size: 6px;
+    gap: 2px;
+}
+
+.user-name strong {
+    font-size: 7px;
+}
+
+
+/* =================================
+   BOTÓN CERRAR SESIÓN
+================================= */
+
+.logout-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 40px;
+    height: 40px;
+}
+
+.logout-button svg {
+    width: 29px;
+    height: 29px;
+
+    fill: none;
+    stroke: #0877b9;
+    stroke-width: 3;
+
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.logout-button:hover svg {
+    stroke: #36b6ff;
+}
+
+
+/* =================================
+   BARRA SECUNDARIA
+================================= */
+
+.sub-navbar {
+    height: 24px;
+
+    background-color: #07549a;
+    border-bottom: 3px solid white;
+
+    display: flex;
+    align-items: center;
+}
+
+.home-button {
+    background-color: #eeeeee;
+    color: #17365b;
+
+    text-decoration: none;
+    font-size: 9px;
+
+    padding: 3px 7px;
+    border: 1px solid #999999;
+
+    margin-left: 2px;
+}
+
+.home-button:hover {
+    background-color: white;
+}
+
+
+/* =================================
+   CONTENIDO PRINCIPAL
+================================= */
+
+.main-content {
+    min-height: calc(100vh - 94px);
+
+    background-color: #061333;
+
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* =================================
+   MARCAS DE AGUA
+================================= */
+
+.watermark-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 40px 30px;
+    padding: 40px 0;
+}
+
+.watermark {
+    height: 290px;
+    width: 245px;
+
+    margin: auto;
+
+    border: 1px solid rgba(13, 76, 139, 0.22);
+    border-radius: 50%;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    color: rgba(30, 91, 155, 0.25);
+}
+
+.watermark span {
+    font-size: 23px;
+    font-weight: bold;
+
+    text-align: center;
+    transform: rotate(-15deg);
+
+    line-height: 1.3;
+}
+
+.fingerprint {
+    width: 150px;
+    height: 170px;
+
+    border: 1px solid rgba(30, 91, 155, 0.25);
+    border-radius: 50%;
+
+    margin-top: 15px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 90px;
+    color: rgba(30, 91, 155, 0.2);
+}
+
+
+/* =================================
+   RESPONSIVE
+================================= */
+
+@media (max-width: 800px) {
+
+    .navbar {
+        grid-template-columns: 1fr auto;
+        padding: 0 10px;
+    }
+
+    .navbar-menu {
+        display: none;
+    }
+
+    .navbar-right {
+        gap: 10px;
+    }
+
+    .logo-due,
+    .logo-diligence {
+        font-size: 16px;
+    }
+
+    .watermark-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 450px) {
+
+    .user-time,
+    .user-name {
+        display: none;
+    }
+
+    .watermark-grid {
+        grid-template-columns: 1fr;
+    }
+}

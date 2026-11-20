@@ -1,0 +1,930 @@
+
+/* =========================================
+   CONFIGURACIÓN GENERAL
+========================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #061333;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+
+
+/* =========================================
+   PESTAÑAS SUPERIORES
+========================================= */
+
+.sub-navbar {
+    height: 25px;
+    display: flex;
+    align-items: center;
+    background-color: #07549a;
+    border-bottom: 3px solid #bfc5ca;
+    overflow: hidden;
+}
+
+.home-button {
+    height: 19px;
+    display: flex;
+    align-items: center;
+}
+
+.active-tab {
+    height: 19px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    padding: 0 8px;
+
+    background-color: #eeeeee;
+    border: 1px solid #b6b6b6;
+    border-bottom: none;
+
+    color: #17365b;
+    font-size: 9px;
+}
+
+.active-tab a {
+    text-decoration: none;
+    color: #666666;
+    font-size: 11px;
+}
+
+.active-tab a:hover {
+    color: red;
+}
+
+
+/* =========================================
+   PANEL DE BÚSQUEDA
+========================================= */
+
+.search-panel {
+    width: 100%;
+    min-height: calc(100vh - 119px);
+
+    background-color: #061333;
+    border-left: 3px solid #bfc5ca;
+    border-right: 3px solid #bfc5ca;
+    border-bottom: 2px solid #bfc5ca;
+}
+
+
+/* TÍTULO */
+
+.panel-title {
+    height: 27px;
+    margin: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+
+/* =========================================
+   FORMULARIO
+========================================= */
+
+.search-form {
+    min-height: 63px;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    gap: 6px;
+    padding: 3px 29px 5px;
+}
+
+
+/* GRUPOS DE CAMPOS */
+
+.field-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    gap: 12px;
+}
+
+.field-group label {
+    height: 12px;
+
+    color: white;
+    font-size: 9px;
+    font-weight: bold;
+    text-align: center;
+}
+
+
+/* INPUTS */
+
+.field-group input,
+.field-group select {
+    height: 18px;
+
+    border: 1px solid #bfc5ca;
+    border-radius: 3px;
+
+    background-color: white;
+    color: #222222;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 9px;
+
+    outline: none;
+}
+
+.field-group input:focus,
+.field-group select:focus {
+    border-color: #1686c9;
+    box-shadow: 0 0 3px #1686c9;
+}
+
+
+/* ANCHOS DE LOS CAMPOS */
+
+.field-group:nth-child(1) input {
+    width: 168px;
+}
+
+.field-group:nth-child(2) input {
+    width: 96px;
+}
+
+.field-group:nth-child(3) input {
+    width: 56px;
+}
+
+.field-group:nth-child(4) input {
+    width: 128px;
+}
+
+.city-field select {
+    width: 127px;
+}
+
+.percentage-field select {
+    width: 57px;
+}
+
+
+/* =========================================
+   BOTONES DE ACCIÓN
+========================================= */
+
+.action-field {
+    margin-left: 0;
+}
+
+.action-buttons {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+.action-buttons button {
+    height: 35px;
+    border: none;
+    border-radius: 3px;
+
+    padding: 0 6px;
+
+    font-size: 9px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+
+/* APLICAR */
+
+.btn-apply {
+    background-color: #ff2525;
+    color: white;
+}
+
+.btn-apply:hover {
+    background-color: #d60000;
+}
+
+
+/* LIMPIAR */
+
+.btn-clear {
+    background-color: #ff2525;
+    color: white;
+}
+
+.btn-clear:hover {
+    background-color: #d60000;
+}
+
+
+/* DESCARGAR RIESGO */
+
+.btn-download {
+    width: 62px;
+    background-color: #743044;
+    color: #b1a1a6;
+    line-height: 13px;
+}
+
+.btn-download:disabled {
+    opacity: 0.8;
+    cursor: not-allowed;
+}
+
+
+/* =========================================
+   SECCIÓN DE RESULTADOS
+========================================= */
+
+.results-section {
+    width: 100%;
+    margin-top: 0;
+}
+
+
+/* ENCABEZADO ROJO */
+
+.results-header {
+    width: 100%;
+    height: 13px;
+
+    background-color: #ff0000;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+
+    border-top: 1px solid #ff3333;
+    border-bottom: 1px solid #ff3333;
+}
+
+
+/* =========================================
+   CONTROLES DE TABLA
+========================================= */
+
+.table-controls {
+    height: 23px;
+
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    padding: 2px 5px;
+
+    border-top: 4px solid #9da8b1;
+    border-bottom: 3px solid #9da8b1;
+
+    background-color: #061333;
+
+    color: white;
+    font-size: 9px;
+}
+
+
+/* BUSCADOR */
+
+.table-search {
+    height: 16px;
+    width: 108px;
+
+    display: flex;
+    align-items: center;
+
+    background-color: white;
+    border-radius: 4px;
+
+    padding: 0 4px;
+}
+
+.table-search span {
+    color: #555555;
+    font-size: 15px;
+    margin-right: 3px;
+}
+
+.table-search input {
+    width: 100%;
+    height: 14px;
+
+    border: none;
+    outline: none;
+
+    font-size: 9px;
+}
+
+
+/* MOSTRAR REGISTROS */
+
+.show-entries {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.show-entries select {
+    width: 29px;
+    height: 15px;
+
+    font-size: 9px;
+    border: 1px solid #aaaaaa;
+    border-radius: 2px;
+}
+
+
+/* PAGINACIÓN */
+
+.table-pagination {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    margin-left: 15px;
+}
+
+.table-pagination strong {
+    margin-left: 20px;
+    margin-right: 25px;
+}
+
+.table-pagination button {
+    width: 15px;
+    height: 17px;
+
+    padding: 0;
+
+    font-size: 10px;
+    line-height: 12px;
+}
+
+
+/* =========================================
+   TABLA DE RESULTADOS
+========================================= */
+
+.results-table {
+    width: 100%;
+    min-height: 25px;
+
+    background-color: #061333;
+
+    border-bottom: 2px solid #aab3bc;
+    border-top: 2px solid #ff2525;
+}
+
+
+/* MENSAJE SIN DATOS */
+
+.empty-results {
+    height: 17px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 4px;
+
+    background-color: #061333;
+
+    color: white;
+    font-size: 9px;
+    font-weight: bold;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 900px) {
+
+    .search-form {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        padding: 10px;
+        gap: 12px;
+    }
+
+    .field-group:nth-child(1) input {
+        width: 150px;
+    }
+
+    .results-header {
+        font-size: 9px;
+    }
+
+    .table-controls {
+        gap: 7px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .search-form {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .field-group input,
+    .field-group select {
+        width: 100% !important;
+    }
+
+    .action-field {
+        grid-column: 1 / -1;
+    }
+
+    .results-header {
+        font-size: 8px;
+    }
+
+    .table-pagination {
+        margin-left: 0;
+    }
+}
+
+
+
+/* ==========================================
+   MODAL DE RESULTADOS
+========================================== */
+
+/* FONDO OSCURO */
+.modal-overlay {
+    display: none;
+
+    position: fixed;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.68);
+
+    z-index: 9999;
+
+    justify-content: center;
+    align-items: flex-start;
+
+    padding: 63px 15px 30px;
+
+    overflow-y: auto;
+}
+
+/* MOSTRAR MODAL */
+.modal-overlay.active {
+    display: flex;
+}
+
+/* CONTENEDOR */
+.modal-container {
+    width: 100%;
+    max-width: 1100px;
+
+    background-color: #061333;
+
+    border-radius: 7px;
+    overflow: hidden;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+
+    flex-shrink: 0;
+}
+
+/* ==========================================
+   ENCABEZADO DEL MODAL
+========================================== */
+
+.modal-header {
+    height: 48px;
+
+    background-color: #07519a;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+
+    border-bottom: 2px solid #cccccc;
+}
+
+.modal-header h2 {
+    margin: 0;
+
+    color: white;
+
+    font-size: 16px;
+    font-weight: normal;
+}
+
+/* BOTÓN X */
+.modal-close {
+    position: absolute;
+
+    right: 12px;
+    top: 7px;
+
+    background: transparent;
+    border: none;
+
+    color: white;
+
+    font-size: 25px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.modal-close:hover {
+    color: #cccccc;
+}
+
+
+/* ==========================================
+   CUERPO DEL MODAL
+========================================== */
+
+.modal-body {
+    padding: 4px 5.3% 4px;
+
+    background-color: #061333;
+}
+
+
+/* ==========================================
+   LOGO DEL REPORTE
+========================================== */
+
+.report-brand {
+    height: 50px;
+
+    background-color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 5px;
+}
+
+.report-logo {
+    display: flex;
+    align-items: center;
+
+    height: 48px;
+}
+
+.report-logo span {
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 9px;
+
+    background: linear-gradient(135deg, #17466e, #07152e);
+
+    color: white;
+
+    font-size: 21px;
+    font-weight: bold;
+}
+
+.report-logo strong {
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 6px;
+
+    background-color: white;
+
+    border: 1px solid #777777;
+
+    color: #315778;
+
+    font-size: 20px;
+}
+
+.report-company {
+    display: flex;
+    flex-direction: column;
+
+    text-align: right;
+
+    color: #061333;
+
+    font-size: 8px;
+    line-height: 10px;
+}
+
+.report-company strong {
+    font-size: 12px;
+}
+
+
+/* ==========================================
+   TABLA DE COINCIDENCIAS
+========================================== */
+
+.report-table,
+.report-user-table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    table-layout: fixed;
+
+    color: white;
+
+    font-size: 12px;
+}
+
+.report-table th,
+.report-table td,
+.report-user-table th,
+.report-user-table td {
+    border: 1px solid #cccccc;
+
+    padding: 5px 3px;
+
+    text-align: center;
+}
+
+.report-table th {
+    height: 28px;
+
+    font-weight: bold;
+}
+
+.report-table td {
+    height: 22px;
+}
+
+.report-table th:nth-child(1) {
+    width: 25%;
+}
+
+.report-table th:nth-child(2) {
+    width: 25%;
+}
+
+.report-table th:nth-child(3) {
+    width: 25%;
+}
+
+.report-table th:nth-child(4) {
+    width: 13%;
+}
+
+.report-table th:nth-child(5) {
+    width: 12%;
+}
+
+.report-table td:nth-child(2) {
+    text-align: left;
+}
+
+
+/* ==========================================
+   MENSAJE CENTRAL
+========================================== */
+
+.report-message {
+    min-height: 230px;
+
+    border-left: 1px solid #cccccc;
+    border-right: 1px solid #cccccc;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    background-color: #061333;
+}
+
+.report-message p {
+    margin: 0;
+
+    color: white;
+
+    font-size: 36px;
+    font-weight: normal;
+
+    line-height: 1.1;
+}
+
+
+/* ==========================================
+   TABLA DE INFORMACIÓN DEL USUARIO
+========================================== */
+
+.report-user-table th {
+    height: 29px;
+
+    font-size: 12px;
+}
+
+.report-user-table td {
+    height: 23px;
+
+    text-align: left;
+    white-space: nowrap;
+
+    font-size: 11px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+/* ==========================================
+   NOTA IMPORTANTE
+========================================== */
+
+.report-warning {
+    display: grid;
+
+    grid-template-columns: 27% 73%;
+
+    min-height: 185px;
+
+    border: 1px solid #cccccc;
+}
+
+/* PANEL ROJO */
+.warning-title {
+    background-color: #ff0000;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: white;
+
+    font-size: 12px;
+    font-weight: bold;
+
+    border-right: 1px solid white;
+}
+
+/* PANEL AZUL */
+.warning-content {
+    background-color: #0000ff;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 15px 20px;
+
+    text-align: center;
+
+    color: white;
+
+    font-size: 12px;
+    line-height: 21px;
+}
+
+.warning-content p {
+    margin: 2px 0;
+}
+
+
+/* ==========================================
+   BOTÓN DESCARGAR
+========================================== */
+
+.report-footer {
+    height: 38px;
+
+    border: 1px solid #cccccc;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.report-download {
+    background-color: #f03535;
+
+    border: none;
+    border-radius: 4px;
+
+    color: white;
+
+    padding: 8px 12px;
+
+    font-size: 11px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.report-download:hover {
+    background-color: #d51c1c;
+}
+
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (max-width: 800px) {
+
+    .modal-overlay {
+        padding: 20px 8px;
+    }
+
+    .modal-body {
+        padding: 4px 10px;
+    }
+
+    .report-message p {
+        font-size: 27px;
+    }
+
+    .report-table,
+    .report-user-table {
+        font-size: 9px;
+    }
+
+    .report-user-table td {
+        font-size: 8px;
+    }
+
+    .report-warning {
+        grid-template-columns: 25% 75%;
+    }
+
+    .warning-content {
+        font-size: 9px;
+        line-height: 16px;
+        padding: 8px;
+    }
+
+    .report-brand {
+        height: 45px;
+    }
+
+    .report-logo span,
+    .report-logo strong {
+        font-size: 15px;
+        height: 42px;
+    }
+}
+
+@media (max-width: 500px) {
+
+    .report-message {
+        min-height: 180px;
+    }
+
+    .report-message p {
+        font-size: 21px;
+    }
+
+    .report-warning {
+        grid-template-columns: 1fr;
+    }
+
+    .warning-title {
+        min-height: 55px;
+        border-right: none;
+        border-bottom: 1px solid white;
+    }
+
+    .warning-content {
+        min-height: 150px;
+    }
+
+    .report-user-table td,
+    .report-user-table th {
+        font-size: 7px;
+        padding: 3px 1px;
+    }
+}

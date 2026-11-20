@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Due Diligence - Consulta Complementaria</title>
+
+    <!-- Estilos compartidos del Navbar -->
+    <link rel="stylesheet" href="Styles/consultas.css">
+
+    <!-- Estilos de esta pantalla -->
+    <link rel="stylesheet" href="Styles/consulta-complementarias.css">
+</head>
+
+<body>
+
+    <!-- ==================================
+         NAVBAR PRINCIPAL
+    =================================== -->
+
+    <header class="navbar">
+
+        <!-- LOGO -->
+        <div class="navbar-logo">
+            <span class="logo-due">DUE</span>
+            <span class="logo-diligence">DILIGENCE</span>
+        </div>
+
+        <!-- BOTONES CENTRALES -->
+        <nav class="navbar-menu">
+
+            <!-- INICIO -->
+            <a href="consultas.html" class="nav-icon" title="Inicio">
+                <svg viewBox="0 0 24 24">
+                    <path d="M3 11L12 3L21 11" />
+                    <path d="M5 10V21H19V10" />
+                    <path d="M9 21V14H15V21" />
+                </svg>
+            </a>
+
+            <span class="nav-separator"></span>
+
+            <!-- CONSULTAS -->
+            <a href="#" class="nav-icon" title="Consultas">
+                <svg viewBox="0 0 24 24">
+                    <circle cx="10" cy="10" r="6" />
+                    <path d="M14.5 14.5L21 21" />
+                    <path d="M7 10H13" />
+                    <path d="M10 7V13" />
+                </svg>
+            </a>
+
+            <span class="nav-separator"></span>
+
+            <!-- DOCUMENTOS -->
+            <div class="nav-dropdown">
+
+                <button class="nav-icon dropdown-trigger" type="button">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M6 2H15L20 7V22H6Z" />
+                        <path d="M15 2V7H20" />
+                        <path d="M9 12H17" />
+                        <path d="M9 16H17" />
+                        <path d="M9 19H15" />
+                    </svg>
+                </button>
+
+                <div class="dropdown-menu">
+                    <div class="dropdown-title">PROCESOS</div>
+                    <div class="dropdown-divider"></div>
+
+                    <a href="consulta-complementaria.html" class="dropdown-item">
+                        Consulta Complementaria
+                    </a>
+                </div>
+
+            </div>
+
+        </nav>
+
+        <!-- USUARIO Y CERRAR SESIÓN -->
+        <div class="navbar-right">
+
+            <div class="user-info">
+
+                <div class="user-time">
+                    <span>01:36 PM</span>
+                    <span>UTC-5</span>
+                </div>
+
+                <svg class="user-icon" viewBox="0 0 24 24">
+                    <circle cx="12" cy="7" r="4" />
+                    <path d="M3 21C3 16 6.5 13 12 13S21 16 21 21" />
+                </svg>
+
+                <div class="user-name">
+                    <span>UNION DE DROG</span>
+                    <strong>NICOLE STEFAN</strong>
+                </div>
+
+            </div>
+
+            <a href="index.html" class="logout-button" title="Cerrar sesión">
+
+                <svg viewBox="0 0 24 24">
+                    <path d="M20 7A9 9 0 1 0 21 13" />
+                    <path d="M20 3V9H14" />
+                </svg>
+
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <!-- ==================================
+         PESTAÑAS DE NAVEGACIÓN
+    =================================== -->
+
+    <div class="sub-navbar">
+
+        <a href="consultas.html" class="home-button">
+            Inicio
+        </a>
+
+        <div class="active-tab">
+            Consulta Complementaria
+            <a href="consultas.html" title="Cerrar pestaña">×</a>
+        </div>
+
+    </div>
+
+
+    <!-- ==================================
+         PANEL DE BÚSQUEDA
+    =================================== -->
+
+    <main class="search-panel">
+
+        <h2 class="panel-title">
+            PARAMETROS DE BUSQUEDA
+        </h2>
+
+
+        <!-- FORMULARIO -->
+        <form class="search-form">
+
+            <div class="field-group">
+                <label for="nombres">Nombres</label>
+                <input type="text" id="nombres" name="nombres">
+            </div>
+
+            <div class="field-group">
+                <label for="identificacion">Identificación</label>
+                <input type="text" id="identificacion" name="identificacion">
+            </div>
+
+            <div class="field-group">
+                <label for="ciiu">Código CIIU</label>
+                <input type="text" id="ciiu" name="ciiu">
+            </div>
+
+            <div class="field-group">
+                <label for="pais">País</label>
+                <input type="text" id="pais" name="pais">
+            </div>
+
+            <div class="field-group city-field">
+                <label for="ciudad">Ciudad</label>
+
+                <select id="ciudad" name="ciudad">
+                    <option value="">Seleccionar</option>
+                    <option value="bogota">Bogotá</option>
+                    <option value="bucaramanga">Bucaramanga</option>
+                    <option value="medellin">Medellín</option>
+                    <option value="cali">Cali</option>
+                    <option value="barranquilla">Barranquilla</option>
+                </select>
+            </div>
+
+            <div class="field-group percentage-field">
+                <label for="porcentaje">Porcentaje</label>
+
+                <select id="porcentaje" name="porcentaje">
+                    <option value="70">70 %</option>
+                    <option value="80">80 %</option>
+                    <option value="90">90 %</option>
+                    <option value="100">100 %</option>
+                </select>
+            </div>
+
+            <!-- BOTONES DE ACCIÓN -->
+            <div class="field-group action-field">
+                <label>Acción</label>
+
+                <div class="action-buttons">
+
+                    <button type="button" class="btn-apply">
+                        APLICAR
+                    </button>
+
+                    <button type="reset" class="btn-clear">
+                        LIMPIAR
+                    </button>
+
+                    <button type="button" class="btn-download" disabled>
+                        DESCARGAR<br>RIESGO
+                    </button>
+
+                </div>
+            </div>
+
+        </form>
+
+
+        <!-- ==================================
+             BARRA DE RESULTADOS
+        =================================== -->
+
+        <section class="results-section">
+
+            <div class="results-header">
+
+                <span>
+                    RESULTADO BUSQUEDA OTROS ORGANISMOS DE CONTROL
+                </span>
+
+                <span>
+                    REG DISPONIBLES:
+                </span>
+
+            </div>
+
+
+            <!-- CONTROLES DE TABLA -->
+            <div class="table-controls">
+
+                <div class="table-search">
+                    <span>⌕</span>
+                    <input type="search" placeholder="Search">
+                </div>
+
+                <div class="show-entries">
+                    <label for="entries">Show entries:</label>
+
+                    <select id="entries">
+                        <option>15</option>
+                        <option>25</option>
+                        <option>50</option>
+                        <option>100</option>
+                    </select>
+                </div>
+
+                <div class="table-pagination">
+
+                    <span>Reg:</span>
+                    <strong>1-1 de 1</strong>
+
+                    <button type="button" disabled>◀</button>
+                    <button type="button" disabled>▶</button>
+
+                </div>
+
+            </div>
+
+
+            <!-- TABLA DE RESULTADOS -->
+            <div class="results-table">
+
+                <div class="empty-results">
+                    No hay datos para mostrar
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- ==================================
+     MODAL: INFORMACIÓN NO REGISTRADA
+=================================== -->
+
+    <div class="modal-overlay" id="modalResultado">
+
+        <div class="modal-container">
+
+            <!-- ENCABEZADO -->
+            <div class="modal-header">
+
+                <h2>INFORMACION NO REGISTRADA</h2>
+
+                <button type="button" class="modal-close" id="cerrarModal" aria-label="Cerrar">
+                    X
+                </button>
+
+            </div>
+
+            <!-- CONTENIDO -->
+            <div class="modal-body">
+
+                <!-- LOGO Y ENCABEZADO -->
+                <div class="report-brand">
+
+                    <div class="report-logo">
+                        <span>DUE</span>
+                        <strong>DILIGENCE</strong>
+                    </div>
+
+                    <div class="report-company">
+                        <strong>DUE DILIGENCE</strong>
+                        <span>Prevención y Control</span>
+                        <span>Lavado de Activos y</span>
+                        <span>Financiación del Terrorismo</span>
+                    </div>
+
+                </div>
+
+
+                <!-- TABLA DE COINCIDENCIAS -->
+                <table class="report-table">
+
+                    <thead>
+                        <tr>
+                            <th>COINCIDENCIA POR</th>
+                            <th>DATO BUSCADO</th>
+                            <th>DATO ENCONTRADO</th>
+                            <th>%</th>
+                            <th>ORDEN</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td></td>
+                            <td id="datoBuscado">NOMBRE DE PRUEBA</td>
+                            <td></td>
+                            <td id="porcentajeResultado">90</td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+
+                </table>
+
+
+                <!-- MENSAJE CENTRAL -->
+                <div class="report-message">
+
+                    <p>
+                        La anterior<br>
+                        Información no se<br>
+                        encuentra registrada<br>
+                        en nuestras Bases de Datos.
+                    </p>
+
+                </div>
+
+
+                <!-- INFORMACIÓN DEL REPORTE -->
+                <table class="report-user-table">
+
+                    <thead>
+                        <tr>
+                            <th>Nombre Empresa</th>
+                            <th>Nombre Usuario</th>
+                            <th>Fecha</th>
+                            <th>Hora</th>
+                            <th>Ip Origen</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>EMPRESA DE PRUEBA</td>
+                            <td>USUARIO DE PRUEBA</td>
+                            <td>20/11/2026</td>
+                            <td>08:38</td>
+                            <td>127.0.0.1</td>
+                        </tr>
+                    </tbody>
+
+                </table>
+
+
+                <!-- NOTA IMPORTANTE -->
+                <div class="report-warning">
+
+                    <div class="warning-title">
+                        NOTA IMPORTANTE
+                    </div>
+
+                    <div class="warning-content">
+
+                        <p>
+                            Los datos entregados son de carácter informativo
+                            y están sujetos a verificación por parte del SUSCRIPTOR.
+                        </p>
+
+                        <p>
+                            Es de tener en cuenta que la carga de prueba es el
+                            resultado de una coincidencia fonética y la noticia
+                            puede estar en desarrollo.
+                        </p>
+
+                        <p>
+                            Tanto DUE DILIGENCE como el SUSCRIPTOR respetarán
+                            el derecho al buen nombre o Habeas Data.
+                        </p>
+
+                        <p>
+                            El Artículo 15 de la Constitución garantiza el
+                            derecho al buen nombre.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- BOTÓN DESCARGAR -->
+                <div class="report-footer">
+
+                    <button type="button" class="report-download">
+                        DESCARGAR
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ==================================
+     CONTROL DEL MODAL
+=================================== -->
+
+    <script>
+
+        const modalResultado = document.getElementById("modalResultado");
+
+        const botonAplicar = document.querySelector(".btn-apply");
+
+        const botonCerrar = document.getElementById("cerrarModal");
+
+
+        // ABRIR MODAL AL PULSAR APLICAR
+        botonAplicar.addEventListener("click", function () {
+
+            const nombres = document.getElementById("nombres").value;
+            const identificacion = document.getElementById("identificacion").value;
+            const ciiu = document.getElementById("ciiu").value;
+            const pais = document.getElementById("pais").value;
+            const ciudad = document.getElementById("ciudad").value;
+
+            // Tomar el primer campo que tenga información
+            const dato = nombres || identificacion || ciiu || pais || ciudad;
+
+            document.getElementById("datoBuscado").textContent =
+                dato ? dato.toUpperCase() : "SIN DATO INGRESADO";
+
+            document.getElementById("porcentajeResultado").textContent =
+                document.getElementById("porcentaje").value;
+
+            modalResultado.classList.add("active");
+
+        });
+
+
+        // CERRAR CON LA X
+        botonCerrar.addEventListener("click", function () {
+            modalResultado.classList.remove("active");
+        });
+
+
+        // CERRAR AL PULSAR FUERA DE LA VENTANA
+        modalResultado.addEventListener("click", function (event) {
+
+            if (event.target === modalResultado) {
+                modalResultado.classList.remove("active");
+            }
+
+        });
+
+
+        // CERRAR CON ESCAPE
+        document.addEventListener("keydown", function (event) {
+
+            if (event.key === "Escape") {
+                modalResultado.classList.remove("active");
+            }
+
+        });
+
+    </script>
+</body>
+
+</html>
+
+
+</body>
+
+</html>
