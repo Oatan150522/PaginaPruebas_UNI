@@ -1,0 +1,12 @@
+
+services:
+  pagina-uni:
+    image: nginx:alpine
+    container_name: pagina-uni
+    restart: unless-stopped
+
+    ports:
+      - "8088:80"
+
+    volumes:
+      - ./:/usr/share/nginx/html:ro
