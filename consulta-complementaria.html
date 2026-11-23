@@ -149,8 +149,8 @@
         <form class="search-form">
 
             <div class="field-group">
-                <label for="nombres">Nombres</label>
-                <input type="text" id="nombres" name="nombres">
+                <label for="nombre">Nombres</label>
+                <input type="text" id="nombre" name="nombre">
             </div>
 
             <div class="field-group">
@@ -159,8 +159,8 @@
             </div>
 
             <div class="field-group">
-                <label for="ciiu">Código CIIU</label>
-                <input type="text" id="ciiu" name="ciiu">
+                <label for="cod_ciiu">Código CIIU</label>
+                <input type="text" id="cod_ciiu" name="cod_ciiu">
             </div>
 
             <div class="field-group">
@@ -182,12 +182,23 @@
             </div>
 
             <div class="field-group percentage-field">
-                <label for="porcentaje">Porcentaje</label>
+                <label for="porciento">Porcentaje</label>
 
-                <select id="porcentaje" name="porcentaje">
-                    <option value="70">70 %</option>
+                <select id="porciento" name="porciento">
+                    <option value="30">30 %</option>
+                    <option value="35">35 %</option>
+                    <option value="40">40 %</option>
+                    <option value="45">45 %</option>
+                    <option value="50">50 %</option>
+                    <option value="55">55 %</option>
+                    <option value="60">60 %</option>
+                    <option value="65">65 %</option>
+                    <option value="70" selected>70 %</option>
+                    <option value="75">75 %</option>
                     <option value="80">80 %</option>
+                    <option value="85">85 %</option>
                     <option value="90">90 %</option>
+                    <option value="95">95 %</option>
                     <option value="100">100 %</option>
                 </select>
             </div>
@@ -270,8 +281,31 @@
             <!-- TABLA DE RESULTADOS -->
             <div class="results-table">
 
-                <div class="empty-results">
+                <div class="empty-results" id="mensajeVacio">
                     No hay datos para mostrar
+                </div>
+
+                <!-- TABLA DE HALLAZGO -->
+                <div id="tablaHallazgo" style="display:none;">
+
+                    <table border="1" cellpadding="2" cellspacing="0"
+                           style="width:100%; color:#ffffff; font-size:9px;">
+
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Identificación</th>
+                                <th>Alias</th>
+                                <th>%</th>
+                                <th>Coincidencia Por</th>
+                                <th>Acción</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="filasHallazgo"></tbody>
+
+                    </table>
+
                 </div>
 
             </div>
@@ -448,24 +482,70 @@
 
         const botonCerrar = document.getElementById("cerrarModal");
 
+        const mensajeVacio = document.getElementById("mensajeVacio");
 
-        // ABRIR MODAL AL PULSAR APLICAR
+        const tablaHallazgo = document.getElementById("tablaHallazgo");
+
+        const filasHallazgo = document.getElementById("filasHallazgo");
+
+
+        // APLICAR: decide entre hallazgo y sin hallazgo
         botonAplicar.addEventListener("click", function () {
 
-            const nombres = document.getElementById("nombres").value;
+            const nombre = document.getElementById("nombre").value;
             const identificacion = document.getElementById("identificacion").value;
-            const ciiu = document.getElementById("ciiu").value;
+            const codCiiu = document.getElementById("cod_ciiu").value;
             const pais = document.getElementById("pais").value;
             const ciudad = document.getElementById("ciudad").value;
+            const porcentaje = document.getElementById("porciento").value;
 
             // Tomar el primer campo que tenga información
-            const dato = nombres || identificacion || ciiu || pais || ciudad;
+            const dato = nombre || identificacion || codCiiu || pais || ciudad;
+            const datoUpper = dato ? dato.toUpperCase() : "SIN DATO INGRESADO";
 
-            document.getElementById("datoBuscado").textContent =
-                dato ? dato.toUpperCase() : "SIN DATO INGRESADO";
+            // 🟢 CON HALLAZGO: la identificación termina en 1
+            if (identificacion.trim().endsWith("1")) {
 
-            document.getElementById("porcentajeResultado").textContent =
-                document.getElementById("porcentaje").value;
+                mensajeVacio.style.display = "none";
+                tablaHallazgo.style.display = "block";
+
+                filasHallazgo.innerHTML = `
+                    <tr>
+                        <td>${nombre.toUpperCase()}</td>
+                        <td>${identificacion}</td>
+                        <td>ALIAS DE PRUEBA</td>
+                        <td>${porcentaje}</td>
+                        <td>NOMBRE</td>
+                        <td>
+                            <button type="button" style="font-size:8px;">Carga Prueba</button>
+                            <button type="button" style="font-size:8px;">Vinculados Due</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>${nombre.toUpperCase()}</td>
+                        <td>${identificacion}</td>
+                        <td>ALIAS DE PRUEBA</td>
+                        <td>${porcentaje}</td>
+                        <td>IDENTIFICACION</td>
+                        <td>
+                            <button type="button" style="font-size:8px;">Carga Prueba</button>
+                            <button type="button" style="font-size:8px;">Vinculados Due</button>
+                        </td>
+                    </tr>
+                `;
+
+                modalResultado.classList.remove("active");
+
+                return;
+
+            }
+
+            // 🔴 SIN HALLAZGO: se muestra el modal existente
+            mensajeVacio.style.display = "";
+            tablaHallazgo.style.display = "none";
+
+            document.getElementById("datoBuscado").textContent = datoUpper;
+            document.getElementById("porcentajeResultado").textContent = porcentaje;
 
             modalResultado.classList.add("active");
 
@@ -498,11 +578,6 @@
         });
 
     </script>
-</body>
-
-</html>
-
-
 </body>
 
 </html>
